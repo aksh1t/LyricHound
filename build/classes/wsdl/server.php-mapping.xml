@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<java-wsdl-mapping xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.1" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee    http://www.ibm.com/webservices/xsd/j2ee_jaxrpc_mapping_1_1.xsd">
+  <package-mapping>
+    <package-type>webservice</package-type>
+    <namespaceURI>urn:LyricWiki</namespaceURI>
+  </package-mapping>
+  <java-xml-type-mapping>
+    <java-type>webservice.AlbumResult</java-type>
+    <root-type-qname xmlns:typeNS="urn:LyricWiki">typeNS:AlbumResult</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>artist</java-variable-name>
+      <xml-element-name>artist</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>album</java-variable-name>
+      <xml-element-name>album</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>year</java-variable-name>
+      <xml-element-name>year</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>webservice.LyricsResult</java-type>
+    <root-type-qname xmlns:typeNS="urn:LyricWiki">typeNS:LyricsResult</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>artist</java-variable-name>
+      <xml-element-name>artist</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>song</java-variable-name>
+      <xml-element-name>song</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>lyrics</java-variable-name>
+      <xml-element-name>lyrics</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>url</java-variable-name>
+      <xml-element-name>url</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>webservice.SongResult</java-type>
+    <root-type-qname xmlns:typeNS="urn:LyricWiki">typeNS:SongResult</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>artist</java-variable-name>
+      <xml-element-name>artist</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>song</java-variable-name>
+      <xml-element-name>song</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>webservice.AlbumData</java-type>
+    <root-type-qname xmlns:typeNS="urn:LyricWiki">typeNS:AlbumData</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>album</java-variable-name>
+      <xml-element-name>album</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>year</java-variable-name>
+      <xml-element-name>year</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>amazonLink</java-variable-name>
+      <xml-element-name>amazonLink</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>imgUrl</java-variable-name>
+      <xml-element-name>imgUrl</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>url</java-variable-name>
+      <xml-element-name>url</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>songs</java-variable-name>
+      <xml-element-name>songs</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>webservice.TopSong</java-type>
+    <root-type-qname xmlns:typeNS="urn:LyricWiki">typeNS:TopSong</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>rank</java-variable-name>
+      <xml-element-name>rank</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>artist</java-variable-name>
+      <xml-element-name>artist</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>song</java-variable-name>
+      <xml-element-name>song</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>image</java-variable-name>
+      <xml-element-name>image</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>itunes</java-variable-name>
+      <xml-element-name>itunes</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>url</java-variable-name>
+      <xml-element-name>url</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <java-xml-type-mapping>
+    <java-type>webservice.SOTDResult</java-type>
+    <root-type-qname xmlns:typeNS="urn:LyricWiki">typeNS:SOTDResult</root-type-qname>
+    <qname-scope>complexType</qname-scope>
+    <variable-mapping>
+      <java-variable-name>artist</java-variable-name>
+      <xml-element-name>artist</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>song</java-variable-name>
+      <xml-element-name>song</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>nominatedBy</java-variable-name>
+      <xml-element-name>nominatedBy</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>reason</java-variable-name>
+      <xml-element-name>reason</xml-element-name>
+    </variable-mapping>
+    <variable-mapping>
+      <java-variable-name>lyrics</java-variable-name>
+      <xml-element-name>lyrics</xml-element-name>
+    </variable-mapping>
+  </java-xml-type-mapping>
+  <service-interface-mapping>
+    <service-interface>webservice.LyricWiki</service-interface>
+    <wsdl-service-name xmlns:serviceNS="urn:LyricWiki">serviceNS:LyricWiki</wsdl-service-name>
+    <port-mapping>
+      <port-name>LyricWikiPort</port-name>
+      <java-port-name>LyricWikiPort</java-port-name>
+    </port-mapping>
+  </service-interface-mapping>
+  <service-endpoint-interface-mapping>
+    <service-endpoint-interface>webservice.LyricWikiPortType</service-endpoint-interface>
+    <wsdl-port-type xmlns:portTypeNS="urn:LyricWiki">portTypeNS:LyricWikiPortType</wsdl-port-type>
+    <wsdl-binding xmlns:bindingNS="urn:LyricWiki">bindingNS:LyricWikiBinding</wsdl-binding>
+    <service-endpoint-method-mapping>
+      <java-method-name>checkSongExists</java-method-name>
+      <wsdl-operation>checkSongExists</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:checkSongExistsRequest</wsdl-message>
+          <wsdl-message-part-name>artist</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>1</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:checkSongExistsRequest</wsdl-message>
+          <wsdl-message-part-name>song</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>boolean</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:checkSongExistsResponse</wsdl-message>
+        <wsdl-message-part-name>return</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>searchArtists</java-method-name>
+      <wsdl-operation>searchArtists</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:searchArtistsRequest</wsdl-message>
+          <wsdl-message-part-name>searchString</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>java.lang.String[]</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:searchArtistsResponse</wsdl-message>
+        <wsdl-message-part-name>return</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>searchAlbums</java-method-name>
+      <wsdl-operation>searchAlbums</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:searchAlbumsRequest</wsdl-message>
+          <wsdl-message-part-name>artist</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>1</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:searchAlbumsRequest</wsdl-message>
+          <wsdl-message-part-name>album</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>2</param-position>
+        <param-type>int</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:searchAlbumsRequest</wsdl-message>
+          <wsdl-message-part-name>year</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>webservice.AlbumResult[]</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:searchAlbumsResponse</wsdl-message>
+        <wsdl-message-part-name>return</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>searchSongs</java-method-name>
+      <wsdl-operation>searchSongs</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:searchSongsRequest</wsdl-message>
+          <wsdl-message-part-name>artist</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>1</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:searchSongsRequest</wsdl-message>
+          <wsdl-message-part-name>song</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>webservice.SongResult</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:searchSongsResponse</wsdl-message>
+        <wsdl-message-part-name>return</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>getSOTD</java-method-name>
+      <wsdl-operation>getSOTD</wsdl-operation>
+      <wsdl-return-value-mapping>
+        <method-return-value>webservice.SOTDResult</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getSOTDResponse</wsdl-message>
+        <wsdl-message-part-name>return</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>getSong</java-method-name>
+      <wsdl-operation>getSong</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getSongRequest</wsdl-message>
+          <wsdl-message-part-name>artist</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>1</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getSongRequest</wsdl-message>
+          <wsdl-message-part-name>song</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>webservice.LyricsResult</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getSongResponse</wsdl-message>
+        <wsdl-message-part-name>return</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>getSongResult</java-method-name>
+      <wsdl-operation>getSongResult</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getSongResultRequest</wsdl-message>
+          <wsdl-message-part-name>artist</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>1</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getSongResultRequest</wsdl-message>
+          <wsdl-message-part-name>song</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>webservice.LyricsResult</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getSongResultResponse</wsdl-message>
+        <wsdl-message-part-name>songResult</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>getArtist</java-method-name>
+      <wsdl-operation>getArtist</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getArtistRequest</wsdl-message>
+          <wsdl-message-part-name>artist</wsdl-message-part-name>
+          <parameter-mode>INOUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>1</param-position>
+        <param-type>webservice.AlbumData[]</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getArtistResponse</wsdl-message>
+          <wsdl-message-part-name>albums</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>getAlbum</java-method-name>
+      <wsdl-operation>getAlbum</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getAlbumRequest</wsdl-message>
+          <wsdl-message-part-name>artist</wsdl-message-part-name>
+          <parameter-mode>INOUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>1</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getAlbumRequest</wsdl-message>
+          <wsdl-message-part-name>album</wsdl-message-part-name>
+          <parameter-mode>INOUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>2</param-position>
+        <param-type>int</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getAlbumRequest</wsdl-message>
+          <wsdl-message-part-name>year</wsdl-message-part-name>
+          <parameter-mode>INOUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>3</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getAlbumResponse</wsdl-message>
+          <wsdl-message-part-name>amazonLink</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>4</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getAlbumResponse</wsdl-message>
+          <wsdl-message-part-name>imgUrl</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>5</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getAlbumResponse</wsdl-message>
+          <wsdl-message-part-name>url</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>6</param-position>
+        <param-type>java.lang.String[]</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getAlbumResponse</wsdl-message>
+          <wsdl-message-part-name>songs</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>getHometown</java-method-name>
+      <wsdl-operation>getHometown</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getHometownRequest</wsdl-message>
+          <wsdl-message-part-name>artist</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>1</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getHometownResponse</wsdl-message>
+          <wsdl-message-part-name>country</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>2</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getHometownResponse</wsdl-message>
+          <wsdl-message-part-name>state</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>3</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getHometownResponse</wsdl-message>
+          <wsdl-message-part-name>hometown</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>getTopSongs</java-method-name>
+      <wsdl-operation>getTopSongs</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getTopSongsRequest</wsdl-message>
+          <wsdl-message-part-name>limit</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <wsdl-return-value-mapping>
+        <method-return-value>webservice.TopSong[]</method-return-value>
+        <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:getTopSongsResponse</wsdl-message>
+        <wsdl-message-part-name>topSongs</wsdl-message-part-name>
+      </wsdl-return-value-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>postArtist</java-method-name>
+      <wsdl-operation>postArtist</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>boolean</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postArtistRequest</wsdl-message>
+          <wsdl-message-part-name>overwriteIfExists</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>1</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postArtistRequest</wsdl-message>
+          <wsdl-message-part-name>artist</wsdl-message-part-name>
+          <parameter-mode>INOUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>2</param-position>
+        <param-type>webservice.AlbumData[]</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postArtistRequest</wsdl-message>
+          <wsdl-message-part-name>albums</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>3</param-position>
+        <param-type>boolean</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postArtistResponse</wsdl-message>
+          <wsdl-message-part-name>dataUsed</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>4</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postArtistResponse</wsdl-message>
+          <wsdl-message-part-name>message</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>postAlbum</java-method-name>
+      <wsdl-operation>postAlbum</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>boolean</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postAlbumRequest</wsdl-message>
+          <wsdl-message-part-name>overwriteIfExists</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>1</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postAlbumRequest</wsdl-message>
+          <wsdl-message-part-name>artist</wsdl-message-part-name>
+          <parameter-mode>INOUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>2</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postAlbumRequest</wsdl-message>
+          <wsdl-message-part-name>album</wsdl-message-part-name>
+          <parameter-mode>INOUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>3</param-position>
+        <param-type>int</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postAlbumRequest</wsdl-message>
+          <wsdl-message-part-name>year</wsdl-message-part-name>
+          <parameter-mode>INOUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>4</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postAlbumRequest</wsdl-message>
+          <wsdl-message-part-name>asin</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>5</param-position>
+        <param-type>java.lang.String[]</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postAlbumRequest</wsdl-message>
+          <wsdl-message-part-name>songs</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>6</param-position>
+        <param-type>boolean</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postAlbumResponse</wsdl-message>
+          <wsdl-message-part-name>dataUsed</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>7</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postAlbumResponse</wsdl-message>
+          <wsdl-message-part-name>message</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>postSong</java-method-name>
+      <wsdl-operation>postSong</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>boolean</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSongRequest</wsdl-message>
+          <wsdl-message-part-name>overwriteIfExists</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>1</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSongRequest</wsdl-message>
+          <wsdl-message-part-name>artist</wsdl-message-part-name>
+          <parameter-mode>INOUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>2</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSongRequest</wsdl-message>
+          <wsdl-message-part-name>song</wsdl-message-part-name>
+          <parameter-mode>INOUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>3</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSongRequest</wsdl-message>
+          <wsdl-message-part-name>lyrics</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>4</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSongRequest</wsdl-message>
+          <wsdl-message-part-name>language</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>5</param-position>
+        <param-type>webservice.AlbumResult[]</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSongRequest</wsdl-message>
+          <wsdl-message-part-name>onAlbums</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>6</param-position>
+        <param-type>boolean</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSongResponse</wsdl-message>
+          <wsdl-message-part-name>dataUsed</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>7</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSongResponse</wsdl-message>
+          <wsdl-message-part-name>message</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+    </service-endpoint-method-mapping>
+    <service-endpoint-method-mapping>
+      <java-method-name>postSong_flags</java-method-name>
+      <wsdl-operation>postSong_flags</wsdl-operation>
+      <method-param-parts-mapping>
+        <param-position>0</param-position>
+        <param-type>boolean</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSong_flagsRequest</wsdl-message>
+          <wsdl-message-part-name>overwriteIfExists</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>1</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSong_flagsRequest</wsdl-message>
+          <wsdl-message-part-name>artist</wsdl-message-part-name>
+          <parameter-mode>INOUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>2</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSong_flagsRequest</wsdl-message>
+          <wsdl-message-part-name>song</wsdl-message-part-name>
+          <parameter-mode>INOUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>3</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSong_flagsRequest</wsdl-message>
+          <wsdl-message-part-name>lyrics</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>4</param-position>
+        <param-type>webservice.AlbumResult[]</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSong_flagsRequest</wsdl-message>
+          <wsdl-message-part-name>onAlbums</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>5</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSong_flagsRequest</wsdl-message>
+          <wsdl-message-part-name>flags</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>6</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSong_flagsRequest</wsdl-message>
+          <wsdl-message-part-name>language</wsdl-message-part-name>
+          <parameter-mode>IN</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>7</param-position>
+        <param-type>boolean</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSong_flagsResponse</wsdl-message>
+          <wsdl-message-part-name>dataUsed</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+      <method-param-parts-mapping>
+        <param-position>8</param-position>
+        <param-type>java.lang.String</param-type>
+        <wsdl-message-mapping>
+          <wsdl-message xmlns:wsdlMsgNS="urn:LyricWiki">wsdlMsgNS:postSong_flagsResponse</wsdl-message>
+          <wsdl-message-part-name>message</wsdl-message-part-name>
+          <parameter-mode>OUT</parameter-mode>
+        </wsdl-message-mapping>
+      </method-param-parts-mapping>
+    </service-endpoint-method-mapping>
+  </service-endpoint-interface-mapping>
+</java-wsdl-mapping>
