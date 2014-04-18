@@ -2,16 +2,20 @@ package View;
 
 import Controller.OpenFileDialogHandler;
 import Controller.TableCreator;
+import Database.DatabaseInsert;
+import Database.DatabaseSelect;
 import Libraries.FileFilter;
 import Libraries.FileHandler;
 import Libraries.WebServiceHandler;
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 import org.jaudiotagger.tag.FieldKey;
 import org.jaudiotagger.tag.Tag;
 
-public class LyricHound extends javax.swing.JFrame implements Runnable{
-    
+public class LyricHound extends javax.swing.JFrame implements Runnable {
+
     Thread MainThread;
     Thread SingleLyricThread;
     Thread MultiLyricThread;
@@ -20,9 +24,10 @@ public class LyricHound extends javax.swing.JFrame implements Runnable{
     JTable MainTable;
     public static File[] files;
     public static Tag[] tags;
-    
+
     public LyricHound() {
         initComponents();
+        Logger.getLogger("org.jaudiotagger").setLevel(Level.OFF);
         statusText.setText("Ready!");
     }
 
@@ -208,37 +213,37 @@ public class LyricHound extends javax.swing.JFrame implements Runnable{
     }// </editor-fold>//GEN-END:initComponents
 
     private void HelpMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HelpMenuItemActionPerformed
-        
+
         String message = "NOTE : Please make sure that your MP3 file tags for Title of the song"
-                +" and Artist Name are accurate as this application searches"
-                +" Lyrics based on Title of song and Artist Name. You can"
-                +" manually edit the tags in this application or download this"
-                +" software - MusicBrainz Picard which can be downloaded for"
-                +" free here - http://musicbrainz.org/doc/MusicBrainz_Picard\n\n\n"
-                +"• Step 1 : Click on File>Open File or Folder and select MP3 file(s) or"
-                +" Folders which contain MP3 files.\n\n"
-                +"• Step 2 : Check the Title of the song and Artist Name, and edit"
-                +" manually if they are wrong, or use MusicBrainz Picard. If you"
-                +" edit the tags manually, make sure to click the Save all Files"
-                +" button before searching for lyrics.\n\n"
-                +"• Step 3 : You can select one song and search for lyrics individually,"
-                +" or can search for lyrics of all the songs at once. Due to"
-                +" table size limitation, the whole lyrics will not be displayed"
-                +" in the table, but you can select the particular song and"
-                +" click on Search Lyrics for selected Song to display its lyrics.\n\n"
-                +"• Step 4 : After searching for lyrics or editing any field of the table"
-                +" make sure that you press the save button to save the data"
-                +" permanently to the MP3 file. If you do not press the save"
-                +" button, the lyrics which you searched will not be saved.";
-        
-        JOptionPane.showMessageDialog(rootPane, message,"Help",JOptionPane.PLAIN_MESSAGE,null);
+                + " and Artist Name are accurate as this application searches"
+                + " Lyrics based on Title of song and Artist Name. You can"
+                + " manually edit the tags in this application or download this"
+                + " software - MusicBrainz Picard which can be downloaded for"
+                + " free here - http://musicbrainz.org/doc/MusicBrainz_Picard\n\n\n"
+                + "• Step 1 : Click on File>Open File or Folder and select MP3 file(s) or"
+                + " Folders which contain MP3 files.\n\n"
+                + "• Step 2 : Check the Title of the song and Artist Name, and edit"
+                + " manually if they are wrong, or use MusicBrainz Picard. If you"
+                + " edit the tags manually, make sure to click the Save all Files"
+                + " button before searching for lyrics.\n\n"
+                + "• Step 3 : You can select one song and search for lyrics individually,"
+                + " or can search for lyrics of all the songs at once. Due to"
+                + " table size limitation, the whole lyrics will not be displayed"
+                + " in the table, but you can select the particular song and"
+                + " click on Search Lyrics for selected Song to display its lyrics.\n\n"
+                + "• Step 4 : After searching for lyrics or editing any field of the table"
+                + " make sure that you press the save button to save the data"
+                + " permanently to the MP3 file. If you do not press the save"
+                + " button, the lyrics which you searched will not be saved.";
+
+        JOptionPane.showMessageDialog(rootPane, message, "Help", JOptionPane.PLAIN_MESSAGE, null);
     }//GEN-LAST:event_HelpMenuItemActionPerformed
 
     private void OpenMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OpenMenuItemActionPerformed
-       try {
+        try {
             startMainThread();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Error occured with opening file dialog.","ERROR",JOptionPane.ERROR_MESSAGE,null);
+            JOptionPane.showMessageDialog(rootPane, "Error occured with opening file dialog.", "ERROR", JOptionPane.ERROR_MESSAGE, null);
         }
     }//GEN-LAST:event_OpenMenuItemActionPerformed
 
@@ -250,7 +255,7 @@ public class LyricHound extends javax.swing.JFrame implements Runnable{
         try {
             startSingleLyricThread();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Error occured with finding lyric.","ERROR",JOptionPane.ERROR_MESSAGE,null);
+            JOptionPane.showMessageDialog(rootPane, "Error occured with finding lyric.", "ERROR", JOptionPane.ERROR_MESSAGE, null);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -258,7 +263,7 @@ public class LyricHound extends javax.swing.JFrame implements Runnable{
         try {
             startMultiLyricThread();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Error occured with finding lyric.","ERROR",JOptionPane.ERROR_MESSAGE,null);
+            JOptionPane.showMessageDialog(rootPane, "Error occured with finding lyric.", "ERROR", JOptionPane.ERROR_MESSAGE, null);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -266,7 +271,7 @@ public class LyricHound extends javax.swing.JFrame implements Runnable{
         try {
             startSingleSaveThread();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Error occured with saving file.","ERROR",JOptionPane.ERROR_MESSAGE,null);
+            JOptionPane.showMessageDialog(rootPane, "Error occured with saving file.", "ERROR", JOptionPane.ERROR_MESSAGE, null);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -274,53 +279,57 @@ public class LyricHound extends javax.swing.JFrame implements Runnable{
         try {
             startMultiSaveThread();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Error occured with saving file.","ERROR",JOptionPane.ERROR_MESSAGE,null);
+            JOptionPane.showMessageDialog(rootPane, "Error occured with saving file.", "ERROR", JOptionPane.ERROR_MESSAGE, null);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void AboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AboutMenuItemActionPerformed
         String message = "Application Version 1.0\n"
-                       + "Application made by Akshat Patel\n\n"
-                       + "If you find any bugs, or if you have any suggestions or problems, mail to akshat@gopikunj.com";
-        
-        JOptionPane.showMessageDialog(rootPane, message,"About",JOptionPane.PLAIN_MESSAGE,null);
+                + "Application made by Akshat Patel\n\n"
+                + "If you find any bugs, or if you have any suggestions or problems, mail to akshat@gopikunj.com";
+
+        JOptionPane.showMessageDialog(rootPane, message, "About", JOptionPane.PLAIN_MESSAGE, null);
     }//GEN-LAST:event_AboutMenuItemActionPerformed
 
     public void startMainThread() throws InterruptedException {
         MainThread = new Thread(this, "MainThread");
         MainThread.start();
-    }    
+    }
+
     public void startSingleLyricThread() throws InterruptedException {
         SingleLyricThread = new Thread(this, "SingleLyricThread");
         SingleLyricThread.start();
     }
+
     public void startMultiLyricThread() throws InterruptedException {
         MultiLyricThread = new Thread(this, "MultiLyricThread");
         MultiLyricThread.start();
     }
+
     public void startSingleSaveThread() throws InterruptedException {
         SingleSaveThread = new Thread(this, "SingleSaveThread");
         SingleSaveThread.start();
     }
+
     public void startMultiSaveThread() throws InterruptedException {
         MultiSaveThread = new Thread(this, "MultiSaveThread");
         MultiSaveThread.start();
     }
 
-    @Override
+
     public void run() {
-        
+
         if (Thread.currentThread().equals(MainThread)) {
             try {
                 statusText.setText("Opening file(s)...");
                 JFileChooser filedialog = new JFileChooser();
-                
+
                 filedialog.setFileFilter(new FileFilter());
                 filedialog.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
                 filedialog.setMultiSelectionEnabled(true);
                 int condition = filedialog.showOpenDialog(rootPane);
-                
-                if(condition == JFileChooser.APPROVE_OPTION){
+
+                if (condition == JFileChooser.APPROVE_OPTION) {
                     files = filedialog.getSelectedFiles();
                     Thread.sleep(100);
                     files = OpenFileDialogHandler.getFiles(files);
@@ -330,122 +339,165 @@ public class LyricHound extends javax.swing.JFrame implements Runnable{
                 }
                 statusText.setText("Ready!");
             } catch (Exception e) {
-                
+
                 statusText.setText("Error!!!");
             }
         }
-        
+
         if (Thread.currentThread().equals(SingleLyricThread)) {
-            try{
+            try {
                 WebServiceHandler wsh = new WebServiceHandler();
                 FileHandler fp = new FileHandler();
 
                 int row = MainTable.getSelectedRow();
-                String temp = (String)MainTable.getValueAt(row,0);   
+                String temp = (String) MainTable.getValueAt(row, 0);
                 String temparr[] = temp.split("> ");
-                row = Integer.parseInt(temparr[0]); 
+                row = Integer.parseInt(temparr[0]);
                 row--;
 
-                statusText.setText("Searching lyrics for "+tags[row].getFirst(FieldKey.TITLE)+"...");
-                
-                String lyric = wsh.findLyric(fp.getArtistTitleString(tags[row]));
-                MainTable.getModel().setValueAt(lyric,row,5);
-                
+                statusText.setText("Searching lyrics for " + tags[row].getFirst(FieldKey.TITLE) + "...");
+
+                String mytitle = (String) MainTable.getValueAt(row, 1);
+                String myartist = (String) MainTable.getValueAt(row, 2);
+                String myalbum = (String) MainTable.getValueAt(row, 3);
+
+                String mylyric = DatabaseSelect.getLyricsForSong(mytitle, myartist, myalbum);
+                String lyric = "";
+
+                if (mylyric.equals("")) {
+                    lyric = wsh.findLyric(fp.getArtistTitleString(tags[row]));
+                    MainTable.getModel().setValueAt(lyric, row, 5);
+                } else {
+                    MainTable.getModel().setValueAt(mylyric, row, 5);
+                }
+
                 statusText.setText("Ready!");
-                
-                if(!lyric.equals("")){
+
+                if (!lyric.equals("")) {
                     new ShowLyric(lyric).setVisible(true);
-                }else{
-                    JOptionPane.showMessageDialog(rootPane,"Lyric was not found for this song.","Lyric Not Found",JOptionPane.PLAIN_MESSAGE,null);
+                } else if (!mylyric.equals("")) {
+                    new ShowLyric(mylyric).setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Lyric was not found for this song.", "Lyric Not Found", JOptionPane.PLAIN_MESSAGE, null);
                 }
                 ScrollPane.setViewportView(MainTable);
-            }catch(Exception e){
+            } catch (Exception e) {
                 System.out.println(e);
                 statusText.setText("Error!!!");
             }
         }
-        
+
         if (Thread.currentThread().equals(MultiLyricThread)) {
-            try{
+            try {
                 WebServiceHandler wsh = new WebServiceHandler();
                 FileHandler fp = new FileHandler();
-                
+
                 int failcounter = 0;
-                for(int row = 0;row<MainTable.getRowCount();row++){
-                    String lyric = wsh.findLyric(fp.getArtistTitleString(tags[row]));
-                    int perc = (int) ((double)(row+1)/(double)MainTable.getRowCount()*100);
+                for (int row = 0; row < MainTable.getRowCount(); row++) {
+
+                    String mytitle = (String) MainTable.getValueAt(row, 1);
+                    String myartist = (String) MainTable.getValueAt(row, 2);
+                    String myalbum = (String) MainTable.getValueAt(row, 3);
+
+                    String mylyric = DatabaseSelect.getLyricsForSong(mytitle, myartist, myalbum);
+                    String lyric = "";
+
+                    if (mylyric.equals("")) {
+                        lyric = wsh.findLyric(fp.getArtistTitleString(tags[row]));
+                        MainTable.getModel().setValueAt(lyric, row, 5);
+                    } else {
+                        MainTable.getModel().setValueAt(mylyric, row, 5);
+                    }
+
+                    int perc = (int) ((double) (row + 1) / (double) MainTable.getRowCount() * 100);
                     progressBar.setValue(perc);
-                    statusText.setText("Searching lyrics: Song "+(row+1)+" of "+MainTable.getRowCount()+" ("+perc+"% Done)");
-                    MainTable.getModel().setValueAt(lyric,row,5);
-                    if(lyric.equals("")){failcounter++;}
+                    statusText.setText("Searching lyrics: Song " + (row + 1) + " of " + MainTable.getRowCount() + " (" + perc + "% Done)");
+
+                    if (lyric.equals("")) {
+                        failcounter++;
+                    }
                     ScrollPane.setViewportView(MainTable);
                 }
-                int successpercentage = (int) ((double)(MainTable.getRowCount()-failcounter)/(double)MainTable.getRowCount()*100);
-                JOptionPane.showMessageDialog(rootPane,"Lyrics of "+(MainTable.getRowCount()-failcounter)+" songs found.\nLyrics of "+failcounter+" songs not found.\nSuccess percentage → "+successpercentage+"%");
+                int successpercentage = (int) ((double) (MainTable.getRowCount() - failcounter) / (double) MainTable.getRowCount() * 100);
+                JOptionPane.showMessageDialog(rootPane, "Lyrics of " + (MainTable.getRowCount() - failcounter) + " songs found.\nLyrics of " + failcounter + " songs not found.\nSuccess percentage → " + successpercentage + "%");
                 progressBar.setValue(0);
                 statusText.setText("Ready!");
-                
-            }catch(Exception e){
-                
+
+            } catch (Exception e) {
+
                 statusText.setText("Error!!!");
             }
         }
-        
+
         if (Thread.currentThread().equals(SingleSaveThread)) {
-            try{
+            try {
                 FileHandler fp = new FileHandler();
                 int row = MainTable.getSelectedRow();
-                
-                statusText.setText("Saving file "+tags[row].getFirst(FieldKey.TITLE)+"...");
-                
-                tags[row].setField(FieldKey.TITLE,MainTable.getModel().getValueAt(row,1).toString());
-                tags[row].setField(FieldKey.ARTIST,MainTable.getModel().getValueAt(row,2).toString());
-                tags[row].setField(FieldKey.ALBUM,MainTable.getModel().getValueAt(row,3).toString());
-                tags[row].setField(FieldKey.GENRE,MainTable.getModel().getValueAt(row,4).toString());
-                tags[row].setField(FieldKey.LYRICS,MainTable.getModel().getValueAt(row,5).toString());
-                
-                fp.saveTag(files[row],tags[row]);
-                
+
+                statusText.setText("Saving file " + tags[row].getFirst(FieldKey.TITLE) + "...");
+
+                tags[row].setField(FieldKey.TITLE, MainTable.getModel().getValueAt(row, 1).toString());
+                tags[row].setField(FieldKey.ARTIST, MainTable.getModel().getValueAt(row, 2).toString());
+                tags[row].setField(FieldKey.ALBUM, MainTable.getModel().getValueAt(row, 3).toString());
+                tags[row].setField(FieldKey.GENRE, MainTable.getModel().getValueAt(row, 4).toString());
+                tags[row].setField(FieldKey.LYRICS, MainTable.getModel().getValueAt(row, 5).toString());
+
+                String mytitle = (String) MainTable.getValueAt(row, 1);
+                String myartist = (String) MainTable.getValueAt(row, 2);
+                String myalbum = (String) MainTable.getValueAt(row, 3);
+                String mylyric = (String) MainTable.getValueAt(row, 5);
+
+                DatabaseInsert.insertIntoDatabase(mytitle, myartist, myalbum, mylyric);
+
+                fp.saveTag(files[row], tags[row]);
+
                 statusText.setText("Ready!");
-                
-                JOptionPane.showMessageDialog(rootPane,"File "+files[row].getName()+" successfully saved.");
-            }catch(Exception e){
-                
+
+                JOptionPane.showMessageDialog(rootPane, "File " + files[row].getName() + " successfully saved.");
+            } catch (Exception e) {
+
                 statusText.setText("Error!!!");
             }
         }
-        
+
         if (Thread.currentThread().equals(MultiSaveThread)) {
-            try{
+            try {
                 FileHandler fp = new FileHandler();
-                
-                for(int row = 0;row<MainTable.getRowCount();row++){
-                    
-                    tags[row].setField(FieldKey.TITLE,MainTable.getModel().getValueAt(row,1).toString());
-                    tags[row].setField(FieldKey.ARTIST,MainTable.getModel().getValueAt(row,2).toString());
-                    tags[row].setField(FieldKey.ALBUM,MainTable.getModel().getValueAt(row,3).toString());
-                    tags[row].setField(FieldKey.GENRE,MainTable.getModel().getValueAt(row,4).toString());
-                    tags[row].setField(FieldKey.LYRICS,MainTable.getModel().getValueAt(row,5).toString());
-                
-                    fp.saveTag(files[row],tags[row]);
-                    
-                    int perc = (int) ((double)(row+1)/(double)MainTable.getRowCount()*100);
+
+                for (int row = 0; row < MainTable.getRowCount(); row++) {
+
+                    tags[row].setField(FieldKey.TITLE, MainTable.getModel().getValueAt(row, 1).toString());
+                    tags[row].setField(FieldKey.ARTIST, MainTable.getModel().getValueAt(row, 2).toString());
+                    tags[row].setField(FieldKey.ALBUM, MainTable.getModel().getValueAt(row, 3).toString());
+                    tags[row].setField(FieldKey.GENRE, MainTable.getModel().getValueAt(row, 4).toString());
+                    tags[row].setField(FieldKey.LYRICS, MainTable.getModel().getValueAt(row, 5).toString());
+
+                    String mytitle = (String) MainTable.getValueAt(row, 1);
+                    String myartist = (String) MainTable.getValueAt(row, 2);
+                    String myalbum = (String) MainTable.getValueAt(row, 3);
+                    String mylyric = (String) MainTable.getValueAt(row, 5);
+
+                    DatabaseInsert.insertIntoDatabase(mytitle, myartist, myalbum, mylyric);
+
+                    fp.saveTag(files[row], tags[row]);
+
+                    int perc = (int) ((double) (row + 1) / (double) MainTable.getRowCount() * 100);
                     progressBar.setValue(perc);
-                    statusText.setText("Saving file "+(row+1)+" of "+MainTable.getRowCount()+" ("+perc+"% Done)");
+                    statusText.setText("Saving file " + (row + 1) + " of " + MainTable.getRowCount() + " (" + perc + "% Done)");
                 }
                 statusText.setText("Ready!");
-                JOptionPane.showMessageDialog(rootPane,MainTable.getRowCount()+" files successfully saved.");
-                
-            }catch(Exception e){
-                
+                JOptionPane.showMessageDialog(rootPane, MainTable.getRowCount() + " files successfully saved.");
+
+            } catch (Exception e) {
+
                 statusText.setText("Error!!!");
             }
         }
     }
-    
+
     public static void main(String args[]) {
-        
-       System.setProperty("Quaqua.tabLayoutPolicy", "wrap");
+
+        System.setProperty("Quaqua.tabLayoutPolicy", "wrap");
 
         try {
             JFrame.setDefaultLookAndFeelDecorated(true);
@@ -455,14 +507,14 @@ public class LyricHound extends javax.swing.JFrame implements Runnable{
         }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
-            
+
             @Override
             public void run() {
                 new LyricHound().setVisible(true);
             }
         });
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AboutMenuItem;
     private javax.swing.JMenuItem ExitMenuItem;
